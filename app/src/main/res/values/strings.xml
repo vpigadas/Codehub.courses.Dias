@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DiasCourse</string>
+    <string name="dev_name" translatable="false">VP</string>
+    <string name="pet_name">Orfeas</string>
+    <string name="login_to_your_account">Login to your account</string>
+    <string name="login">Login</string>
+    <string name="email_address">Email address</string>
+    <string name="password">Password</string>
+</resources>

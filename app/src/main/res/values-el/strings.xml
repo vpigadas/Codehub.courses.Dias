@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Διας Course</string>
+    <string name="pet_name">Ορφέας</string>
+    <string name="login_to_your_account">Login to your account</string>
+    <string name="login">Login</string>
+    <string name="email_address">Email address</string>
+    <string name="password">Password</string>
+
+</resources>
