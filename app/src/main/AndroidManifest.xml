@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DiasCourse">
         <activity
+            android:name=".mvvm.MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".storage.StorageActivity"
             android:exported="true">
             <intent-filter>

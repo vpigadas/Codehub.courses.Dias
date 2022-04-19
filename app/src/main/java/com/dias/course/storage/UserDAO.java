@@ -2,6 +2,7 @@ package com.dias.course.storage;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -26,7 +27,7 @@ public interface UserDAO {
     public int delete(UserEntity data);
 
     @Query("SELECT * FROM User")
-    public List<UserEntity> get();
+    public LiveData<List<UserEntity>> get();
 
     @Query("SELECT * FROM User LIMIT 1")
     @Nullable
