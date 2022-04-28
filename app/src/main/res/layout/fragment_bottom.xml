@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.BottomFragment">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="start"
+        android:src="@mipmap/ic_launcher" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="end"
+        android:src="@drawable/ic_baseline_add_alarm_24" />
+
+    <Button
+        android:id="@+id/bottom_btn_close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:text="FINISH" />
+
+    <TextView
+        android:id="@+id/bottom_txt_label"
+        android:layout_width="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        tools:text="@string/app_name" />
+</FrameLayout>

@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 
 import androidx.room.Room;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseGetTask extends AsyncTask<Void, Void, List<UserEntity>> {
@@ -30,7 +31,7 @@ public class DatabaseGetTask extends AsyncTask<Void, Void, List<UserEntity>> {
     protected List<UserEntity> doInBackground(Void... voids) {
         DatabaseInstance databaseInstance = Room.databaseBuilder(context, DatabaseInstance.class, "DiasApp").build();
 
-        return databaseInstance.getUserDao().get();
+        return new ArrayList<>();
     }
 
     @Override

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_products"
+        android:icon="@drawable/ic_baseline_shopping_basket_24"
+        android:title="@string/tab_products" />
+
+    <item
+        android:id="@+id/action_receipts"
+        android:icon="@drawable/ic_baseline_receipt_24"
+        android:title="@string/tab_receipt" />
+
+    <item
+        android:icon="@drawable/ic_baseline_receipt_24"
+        android:title="@string/tab_receipt" />
+    <item
+        android:icon="@drawable/ic_baseline_receipt_24"
+        android:title="@string/tab_receipt" />
+
+    <item
+        android:icon="@drawable/ic_baseline_receipt_24"
+        android:title="@string/tab_receipt" />
+
+
+
+
+
+
+</menu>

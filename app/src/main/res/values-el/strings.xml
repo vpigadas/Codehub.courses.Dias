@@ -7,4 +7,10 @@
     <string name="email_address">Email address</string>
     <string name="password">Password</string>
 
+
+    <string name="pay_button">ΠΛηρωμή</string>
+    <string name="pay_button_with_args">Ποσό (%s €)</string>
+
+    <string name="tab_products">Προϊόντα</string>
+    <string name="tab_receipt">Αποδείξεις</string>
 </resources>

@@ -13,26 +13,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DiasCourse">
         <activity
+            android:name=".application.ui.pay.PayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".application.ui.home.HomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".fragments.FActivity"
+            android:exported="true" />
+        <activity
             android:name=".mvvm.MainActivity"
             android:exported="false" />
         <activity
             android:name=".storage.StorageActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".network.NetworkActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".list.ListActivity"
             android:exported="true" />
