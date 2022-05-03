@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.dias.course.R;
 import com.dias.course.application.network.json.ProductsJsonModel;
+import com.dias.course.application.utils.ListItemCallback;
 
 public class ProductViewHolder extends RecyclerView.ViewHolder {
 

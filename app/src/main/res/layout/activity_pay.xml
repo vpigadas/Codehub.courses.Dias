@@ -27,6 +27,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/pay_button"
+        app:layout_constraintBottom_toTopOf="@id/pay_iris_btn" />
+
+    <Button
+        android:id="@+id/pay_iris_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:text="@string/pay_iris_button"
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <ProgressBar

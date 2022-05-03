@@ -1,9 +1,11 @@
 package com.dias.course.application.network;
 
 import com.dias.course.application.network.json.FinancialReceiptJsonModel;
+import com.dias.course.application.network.json.IRISResponseModel;
 import com.dias.course.application.network.json.ProductsJsonModel;
 import com.dias.course.application.network.json.RequestPayModel;
 import com.dias.course.application.network.json.RequestRefundModel;
+import com.google.gson.JsonObject;
 
 import java.util.List;
 
@@ -43,4 +45,10 @@ public interface JsonApi {
     })
     @POST(PATH + "refund")
     Call<FinancialReceiptJsonModel> transactionRefund(@Body RequestRefundModel body);
+
+    @Headers({
+            "Content-Type: application/json;charset=UTF-8"
+    })
+    @POST("https://test-iris.dias.com.gr/iris-ecommerce-msp/api/register-order-request")
+    Call<IRISResponseModel> getIrisURL(@Body JsonObject body);
 }

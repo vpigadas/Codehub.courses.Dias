@@ -1,4 +1,4 @@
-package com.dias.course.application.ui.home.fragments.poducts.list;
+package com.dias.course.application.utils;
 
 import java.io.Serializable;
 

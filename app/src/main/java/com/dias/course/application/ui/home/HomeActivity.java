@@ -3,7 +3,6 @@ package com.dias.course.application.ui.home;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,8 +14,10 @@ import com.dias.course.R;
 import com.dias.course.application.ui.home.fragments.poducts.ProductFragment;
 import com.dias.course.application.ui.home.fragments.receipt.ReceiptFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+import com.google.android.material.navigationrail.NavigationRailView;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, NavigationBarView.OnItemSelectedListener {
 
     @Nullable
     private ProductFragment productFragment;
@@ -39,21 +40,14 @@ public class HomeActivity extends AppCompatActivity {
         showFragment(productFragment);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNav);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                if (item.getItemId() == R.id.action_products) {
-                    showFragment(productFragment);
+        if (bottomNavigationView != null) {
+            bottomNavigationView.setOnNavigationItemSelectedListener(this::onNavigationItemSelected);
+        }
+        NavigationRailView navigationRailView = findViewById(R.id.bottomNavLand);
+        if (navigationRailView != null) {
+            navigationRailView.setOnItemSelectedListener(this::onNavigationItemSelected);
+        }
 
-                    Toast.makeText(HomeActivity.this, "Product Tab selected!!!!", Toast.LENGTH_SHORT).show();
-                } else if (item.getItemId() == R.id.action_receipts) {
-                    showFragment(receiptFragment);
-
-                    Toast.makeText(HomeActivity.this, "Receipt Tab selected!!!!", Toast.LENGTH_SHORT).show();
-                }
-                return true;
-            }
-        });
     }
 
     private void showFragment(Fragment fragment) {
@@ -66,9 +60,9 @@ public class HomeActivity extends AppCompatActivity {
     public void onBackPressed() {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNav);
 
-        if(bottomNavigationView.getSelectedItemId() == R.id.action_products){
+        if (bottomNavigationView.getSelectedItemId() == R.id.action_products) {
             super.onBackPressed();
-        }else {
+        } else {
             bottomNavigationView.setSelectedItemId(R.id.action_products);
         }
     }
@@ -79,5 +73,19 @@ public class HomeActivity extends AppCompatActivity {
             return false; //"Mobile"
         else
             return true; //"Tablet"
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.action_products) {
+            showFragment(productFragment);
+
+//            Toast.makeText(HomeActivity.this, "Product Tab selected!!!!", Toast.LENGTH_SHORT).show();
+        } else if (item.getItemId() == R.id.action_receipts) {
+            showFragment(receiptFragment);
+
+//            Toast.makeText(HomeActivity.this, "Receipt Tab selected!!!!", Toast.LENGTH_SHORT).show();
+        }
+        return true;
     }
 }

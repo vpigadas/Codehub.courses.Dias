@@ -8,10 +8,13 @@
     <string name="password">Password</string>
 
     <string name="pay_button">Pay</string>
+    <string name="pay_iris_button">Other Pay option</string>
     <string name="pay_button_with_args">Pay (%s €)</string>
 
     <string name="tab_products">Products</string>
     <string name="tab_receipt">Receipt</string>
+
+    <string name="fcm_message">Push Notification</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

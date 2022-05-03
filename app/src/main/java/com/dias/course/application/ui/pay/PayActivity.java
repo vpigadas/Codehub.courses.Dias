@@ -1,6 +1,9 @@
 package com.dias.course.application.ui.pay;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,6 +18,7 @@ import com.dias.course.R;
 import com.dias.course.application.network.ApiClient;
 import com.dias.course.application.network.ApiResponse;
 import com.dias.course.application.network.json.FinancialReceiptJsonModel;
+import com.dias.course.application.network.json.IRISResponseModel;
 import com.dias.course.application.network.json.ProductsJsonModel;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -73,6 +77,37 @@ public class PayActivity extends AppCompatActivity {
                 });
             }
         });
+
+        Button btnIris = findViewById(R.id.pay_iris_btn);
+        btnIris.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ApiClient.getInstance().getIris(jsonModel.getAmount(), new ApiResponse<IRISResponseModel>() {
+                    @Override
+                    public void onSuccess(IRISResponseModel data) {
+                        Log.d("IRIS", data.toString());
+                        String url = data.getResp().getBankSelectionToolUrl();
+
+//                        Intent intent = new Intent(Intent.ACTION_VIEW);
+//                        intent.setData(Uri.parse(url));
+//                        startActivity(intent);
+//
+//
+//                        Intent intent = new Intent(PayActivity.this, WebViewActivity.class);
+//                        intent.putExtra(WebViewActivity.ARG_URL, url);
+//                        startActivity(intent);
+
+                        String[] address = new String[]{"vassilis.pigadas@gmail.com"};
+                        composeEmail(address, data.getMessageId());
+                    }
+
+                    @Override
+                    public void onFailed(Exception exception) {
+
+                    }
+                });
+            }
+        });
     }
 
     private int getImage(String name) {
@@ -86,7 +121,7 @@ public class PayActivity extends AppCompatActivity {
             case "peach":
                 return R.drawable.peach;
             case "grapefruit":
-                return R.drawable.grapefruit;
+                return R.mipmap.ic_launcher;
             case "apricot":
                 return R.drawable.apricot;
             case "black_cherry":
@@ -109,6 +144,17 @@ public class PayActivity extends AppCompatActivity {
                 return R.drawable.mango;
             default:
                 return R.mipmap.ic_launcher;
+        }
+    }
+
+
+    public void composeEmail(String[] addresses, String subject) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_EMAIL, addresses);
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
         }
     }
 }

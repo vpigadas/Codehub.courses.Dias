@@ -19,7 +19,7 @@ import com.dias.course.R;
 import com.dias.course.application.network.ApiClient;
 import com.dias.course.application.network.ApiListResponse;
 import com.dias.course.application.network.json.ProductsJsonModel;
-import com.dias.course.application.ui.home.fragments.poducts.list.ListItemCallback;
+import com.dias.course.application.utils.ListItemCallback;
 import com.dias.course.application.ui.home.fragments.poducts.list.ProductAdapter;
 import com.dias.course.application.ui.pay.PayActivity;
 
@@ -47,7 +47,6 @@ public class ProductFragment extends Fragment {
         // Inflate the layout for this fragment
         if (hasTabletDevice()) {
             return inflater.inflate(R.layout.fragment_product, container, false);
-
         }else{
             return inflater.inflate(R.layout.fragment_product, container, false);
 

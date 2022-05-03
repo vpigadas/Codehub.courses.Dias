@@ -11,20 +11,4 @@
         android:icon="@drawable/ic_baseline_receipt_24"
         android:title="@string/tab_receipt" />
 
-    <item
-        android:icon="@drawable/ic_baseline_receipt_24"
-        android:title="@string/tab_receipt" />
-    <item
-        android:icon="@drawable/ic_baseline_receipt_24"
-        android:title="@string/tab_receipt" />
-
-    <item
-        android:icon="@drawable/ic_baseline_receipt_24"
-        android:title="@string/tab_receipt" />
-
-
-
-
-
-
 </menu>
